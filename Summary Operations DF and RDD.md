@@ -3,19 +3,19 @@
 
 1) create dataframe
 
-val df = spark.createDataframe()
-val df = spark.read.format().option().load()
-val df = spark.read.[csv(), json(), parquet(), jdbc(), orc()]
+val df = spark.createDataframe()  
+val df = spark.read.format().option().load()  
+val df = spark.read.[csv(), json(), parquet(), jdbc(), orc()]  
 val df = spark.read.table()
 
 2) manipulate dataframe rows
 
-df.groupBy().agg()
-df.groupBy().pivot().agg()
-df.[cube(), rollup()].agg()
-df.select().
-   where().
-   orderBy()
+df.groupBy().agg()  
+df.groupBy().pivot().agg()  
+df.[cube(), rollup()].agg()  
+df.select().  
+   where().  
+   orderBy()  
 df.join(df1, expression, joinType)
 
 3) manipulate dataframe columns
