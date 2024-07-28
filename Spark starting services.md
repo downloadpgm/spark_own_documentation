@@ -1,4 +1,4 @@
-Starting Spark standalone manually:
+## Starting Spark standalone manually:
  
 On master:
 bin/spark-class org.apache.spark.deploy.master.Master
@@ -7,7 +7,7 @@ Then on workers:
 bin/spark-class org.apache.spark.deploy.worker.Worker spark://masternode:7077
 
 
-Starting Spark standalone using launch scripts:
+## Starting Spark standalone using launch scripts:
 
 1) On master: run ssh-keygen accepting default options.
    ssh-keygen -t dsa
@@ -22,7 +22,7 @@ Starting Spark standalone using launch scripts:
 
 --------------
 
-Connecting Spark to YARN cluster
+## Connecting Spark to YARN cluster
 
 1) copy yarn-site.xml to $SPARK_HOME/conf
 
@@ -32,7 +32,7 @@ Connecting Spark to YARN cluster
 
 --------------
 
-Connecting Spark SQL to Hive metastore:
+## Connecting Spark SQL to Hive metastore:
 
 1) copy hive-site.xml to $SPARK_HOME/conf
 
@@ -46,7 +46,7 @@ Executing Spark SQL without Hive installation
 
 ---------------
 
-Starting Spark Thriftserver :
+## Starting Spark Thriftserver :
 
 1) copy hive-site.xml to $SPARK_HOME/conf
 
