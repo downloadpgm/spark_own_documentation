@@ -26,9 +26,11 @@ bin/spark-class org.apache.spark.deploy.worker.Worker spark://masternode:7077
 
 1) copy yarn-site.xml to $SPARK_HOME/conf
 
-2) set HADOOP_CONF_DIR = $SPARK_HOME/conf
+2) copy also core-site.xml to $SPARK_HOME/conf
 
-3) run spark with --master yarn flag
+3) set HADOOP_CONF_DIR = $SPARK_HOME/conf
+
+4) run spark with --master yarn flag
 
 --------------
 
