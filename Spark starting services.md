@@ -1,24 +1,26 @@
 ## Starting Spark standalone manually:
  
-On master:
+On master:  
 bin/spark-class org.apache.spark.deploy.master.Master
 
-Then on workers:
+Then on workers:  
 bin/spark-class org.apache.spark.deploy.worker.Worker spark://masternode:7077
 
 
 ## Starting Spark standalone using launch scripts:
 
-1) On master: run ssh-keygen accepting default options.
+1) On master:  
+   run ssh-keygen accepting default options.  
    ssh-keygen -t dsa
 
-   On workers: copy ~/.ssh/id_dsa.pub from your master to the worker
-   cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
+   On workers:  
+   copy ~/.ssh/id_dsa.pub from your master to the worker  
+   cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys  
    chmod 644 ~/.ssh/authorized_keys
 
-2) edit conf/slaves file on your master and fill in the workers’ hostnames
+3) edit conf/slaves file on your master and fill in the workers’ hostnames
 
-3) run sbin/start-all.sh on your master
+4) run sbin/start-all.sh on your master
 
 --------------
 
@@ -52,9 +54,11 @@ Executing Spark SQL without Hive installation
 
 1) copy hive-site.xml to $SPARK_HOME/conf
 
-2) start jdbc server
+2) copy also core-site.xml and hdfs-site.xml to $SPARK_HOME/conf
+   
+3) start jdbc server  
    ./sbin/start-thriftserver.sh --master sparkMaster
    
-3) connect to it via beeline
+4) connect to it via beeline  
    ./bin/beeline -u jdbc:hive2://localhost:10000
 
