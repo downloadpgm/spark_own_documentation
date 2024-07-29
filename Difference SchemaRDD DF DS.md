@@ -19,14 +19,14 @@ Dataset (1.6)
 
 ----------
 
-Row object - internally represented by array of bytes
-           - array of bytes interface not available to users
+Row object - internally represented by array of bytes  
+           - array of bytes interface not available to users  
 		   - use get() or getType() to access specific column
 
-Dataframe - wraps a RDD containing objects of Row type
-          - has an appended schema defining column names and data types
+Dataframe - wraps a RDD containing objects of Row type  
+          - has an appended schema defining column names and data types  
 		  - enforced only when job is run (runtime)
 		  
-Dataset - wraps a RDD containing objects of specific class
-        - dismiss a schema; column names and data types enforced by case class
+Dataset - wraps a RDD containing objects of specific class  
+        - dismiss a schema; column names and data types enforced by case class  
 		- enforced when dataset created
