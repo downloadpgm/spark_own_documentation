@@ -83,5 +83,5 @@ rdd.saveAsTexFile, saveAsSequenceFile, saveAsOjectFile
 ```
 rdd.collect  
 rdd.first, take(n), top(n), takeOrdered(n)
-```
 rdd.reduce
+```
