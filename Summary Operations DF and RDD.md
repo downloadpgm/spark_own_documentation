@@ -14,7 +14,7 @@ df.groupBy().agg()
 df.groupBy().pivot().agg()  
 df.[cube(), rollup()].agg()  
 df.select().  
-   where().  
+<nbsp> where().  
    orderBy()  
 df.join(df1, expression, joinType)
 
