@@ -48,7 +48,7 @@ Executing Spark SQL without Hive installation
 
 2) Any tables created using HiveQL’s CREATE TABLE will be placed in the /user/hive/warehouse directory on your default filesystem (either your local filesystem, or HDFS if you have a hdfs-site.xml on your classpath).
 
-## Configuring a Remote Hive metastore
+## Configuring a Remote Shared Hive metastore
 
 1) configure hive-site.xml file to access a remote Hive metastore setting following properties :
 
