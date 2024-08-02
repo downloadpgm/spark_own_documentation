@@ -13,6 +13,7 @@ val df = spark.read.table()
 df.groupBy().agg()
 df.groupBy().pivot().agg()
 df.[cube(), rollup()].agg()
+df.groupBy( window() ).agg()
 df.select().
    where().
    orderBy()
@@ -38,7 +39,7 @@ spark.catalog().listColumns()
 6) actions
 ```
 df.show()
-df.[head(), first()]
+df.[head(), first(), take()]
 df.count()
 df.describe().show()
 ```

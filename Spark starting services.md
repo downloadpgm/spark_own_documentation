@@ -51,9 +51,10 @@ Executing Spark SQL without Hive installation
 ## Configuring a Remote Hive metastore
 
 1) configure hive-site.xml file to access a remote Hive metastore setting following properties :
-■ javax.jdo.option.ConnectionURL - JDBC connection URL
-■ javax.jdo.option.ConnectionDriverName - Class name of the JDBC driver
-■ javax.jdo.option.ConnectionUserName - Database username
+
+■ javax.jdo.option.ConnectionURL - JDBC connection URL  
+■ javax.jdo.option.ConnectionDriverName - Class name of the JDBC driver  
+■ javax.jdo.option.ConnectionUserName - Database username  
 ■ javax.jdo.option.ConnectionPassword - Database user password
 
 2) Initialize the metastore database and create the necessary tables running Hive’s schematool.
