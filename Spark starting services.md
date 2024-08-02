@@ -48,6 +48,16 @@ Executing Spark SQL without Hive installation
 
 2) Any tables created using HiveQL’s CREATE TABLE will be placed in the /user/hive/warehouse directory on your default filesystem (either your local filesystem, or HDFS if you have a hdfs-site.xml on your classpath).
 
+## Configuring a Remote Hive metastore
+
+1) configure hive-site.xml file to access a remote Hive metastore setting following properties :
+■ javax.jdo.option.ConnectionURL - JDBC connection URL
+■ javax.jdo.option.ConnectionDriverName - Class name of the JDBC driver
+■ javax.jdo.option.ConnectionUserName - Database username
+■ javax.jdo.option.ConnectionPassword - Database user password
+
+2) Initialize the metastore database and create the necessary tables running Hive’s schematool.
+
 ---------------
 
 ## Starting Spark Thriftserver :
