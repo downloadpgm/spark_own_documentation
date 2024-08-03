@@ -1,6 +1,6 @@
 Apache Spark working directories
 
-|Directory contents   | Default location | Environment variable | Environment variable |
+|Directory contents   | Default location | Environment variable (Standalone) | Environment variable (YARN) |
 |---------------------|------------------|----------------------|----------------------|
 |Log files            | $SPARK_HOME/logs | SPARK_LOG_DIR        | yarn.nodemanager.local-dirs (yarn-site.xml) = $HADOOP_HOME/logs/userlogs |
 |Working data for the worker process   | $SPARK_HOME/work | SPARK_WORKER_DIR     |  |
