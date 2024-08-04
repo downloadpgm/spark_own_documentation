@@ -71,5 +71,5 @@ Executing Spark SQL without Hive installation
    ./sbin/start-thriftserver.sh --master sparkMaster ( standalone or yarn )
    
 4) connect to it via beeline  
-   ./bin/beeline -u jdbc:hive2://<host>:10000
+   ./bin/beeline -u jdbc:hive2://hostname:10000
 
