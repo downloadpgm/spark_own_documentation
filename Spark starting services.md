@@ -73,3 +73,16 @@ Executing Spark SQL without Hive installation
 4) connect to it via beeline  
    ./bin/beeline -u jdbc:hive2://hostname:10000
 
+---------------
+
+## Starting Spark History server :
+
+1) for spark jobs, set the following paramaters:
+
+spark.eventLog.enabled = true  
+spark.eventLog.dir = hdfs://hdpmst:9000/spark-logs
+
+2) for history server, set spark.history.fs.logDirectory = hdfs://hdpmst:9000/spark-logs
+
+3) start history server  
+   ./sbin/start-history-server.sh
