@@ -79,8 +79,8 @@ Executing Spark SQL without Hive installation
 
 1) for spark jobs, set the following paramaters:
 
-spark.eventLog.enabled = true  
-spark.eventLog.dir = hdfs://hdpmst:9000/spark-logs
+   spark.eventLog.enabled = true  
+   spark.eventLog.dir = hdfs://hdpmst:9000/spark-logs
 
 2) for history server, set spark.history.fs.logDirectory = hdfs://hdpmst:9000/spark-logs
 
