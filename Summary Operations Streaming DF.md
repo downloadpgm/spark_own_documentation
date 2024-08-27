@@ -3,7 +3,7 @@
 
 1) create streaming dataframe
 ```
-spark.readStream.format("<type>")
+val df = spark.readStream.format("<type>")
   .option("key","value")
   .schema(schema)
   .load()
