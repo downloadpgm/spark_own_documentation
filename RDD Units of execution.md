@@ -3,8 +3,8 @@
 
 Jobs: work required to compute RDD in runJob  
 Stages: a wave of work within a job, corresponding to one or more pipelined RDD´s  
-Tasks: a unit of work within a stage, corresponding to one RDD partition  
-Shuffle : the transfer of data between stages
+Tasks: a unit of work within a stage, corresponding to one RDD partition and computed by executor   
+Shuffle : the transfer of data between stages/partitions
 
 
 ## Workflow Spark application :
