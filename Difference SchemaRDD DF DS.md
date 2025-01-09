@@ -30,3 +30,11 @@ Dataframe - wraps a RDD containing objects of Row type
 Dataset - wraps a RDD containing objects of specific class  
         - dismiss a schema; column names and data types enforced by case class  
 		- enforced when dataset created
+
+----------
+
+When you use the Dataset API, for every row it touches, Spark converts the internal Row format to the object you specified (a case class or Java class). This conversion slows down your operations but can provide more flexibility.
+
+// Beginning Apache Spark, pag 142
+
+When you use the strongly typed Dataset APIs, Spark implicitly converts each Row instance to the domain-specific object that you provide. This conversion has some cost in terms of performance; however, it provides more flexibility.
