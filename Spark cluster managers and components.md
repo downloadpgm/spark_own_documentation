@@ -17,12 +17,12 @@ Driver orchestrates and monitors execution of Spark jobs, and executors execute 
 ■ Each Spark application would have its own set of executors and a separate driver running in the cluster
 
 ■ Spark standalone cluster running on two nodes with two workers:
-Step 1. A client process submits an application to the master.
-Step 2. The master instructs one of its workers to launch a driver.
-Step 3. The worker spawns a driver JVM.
-Step 4. The master instructs both workers to launch executors for the application. 
-Step 5. The workers spawn executor JVMs.
-Step 6. The driver and executors communicate independent of the cluster’s processes.
+ Step 1. A client process submits an application to the master.
+ Step 2. The master instructs one of its workers to launch a driver.
+ Step 3. The worker spawns a driver JVM.
+ Step 4. The master instructs both workers to launch executors for the application. 
+ Step 5. The workers spawn executor JVMs.
+ Step 6. The driver and executors communicate independent of the cluster’s processes.
 
 
 # Hadoop YARN
