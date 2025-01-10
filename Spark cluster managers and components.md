@@ -45,15 +45,15 @@ YARN is Hadoop’s resource manager and execution system. Running Spark on YARN 
 ■ YARN provides methods for isolating and prioritizing applications among users and organizations, functionality the standalone cluster doesn’t have.  
 ■ You don’t have to install Spark on all nodes in the cluster.
 
-■ YARN main components are a resource manager (similar to Spark master) for the cluster and node managers (similar to Spark workers) for each node in the cluster.
-■ Applications on YARN run in containers (JVM processes to which CPU and memory resources are granted). 
-■ An application master, which runs the application, runs in its own container, and it is responsible for requesting application resources for the resource manager. 
+■ YARN main components are a resource manager (similar to Spark master) for the cluster and node managers (similar to Spark workers) for each node in the cluster.  
+■ Applications on YARN run in containers (JVM processes to which CPU and memory resources are granted).  
+■ An application master, which runs the application, runs in its own container, and it is responsible for requesting application resources for the resource manager.  
 ■ When Spark is running on YARN, the Spark driver process acts as the YARN application master. Node managers track resources used by containers and report to the resource manager.
 
-■ Hadoop YARN cluster running on two nodes with two node managers:
-Step 1. A client process submits an application to the resource manager.
-Step 2. The resource manager instructs one of its node managers to allocate a container for the application master.
-Step 3. A node manager launches a container for the application master (Spark driver)
-Step 4. The application master asks the resource manager for more containers to be used as Spark executors. 
-Step 5. If granted, application master asks the node managers to launch executors in the new containers.
+■ Hadoop YARN cluster running on two nodes with two node managers:  
+Step 1. A client process submits an application to the resource manager.  
+Step 2. The resource manager instructs one of its node managers to allocate a container for the application master.  
+Step 3. A node manager launches a container for the application master (Spark driver)  
+Step 4. The application master asks the resource manager for more containers to be used as Spark executors.  
+Step 5. If granted, application master asks the node managers to launch executors in the new containers.  
 Step 6. The driver and executors communicate independent of the cluster’s processes.
