@@ -10,6 +10,10 @@ The main clusters that Spark runs on are Hadoop YARN, Apache Mesos, and Spark st
 ■ It’s relatively simple and efficient to setup and comes with Spark out of the box.  
 ■ Spark has to be installed on all nodes in the cluster in order for them to be usable as slaves.
 
+Limitations:
+1) It is not possible to run mixed different types of Java applications, only Spark.
+2) It is not possible to run intermixed different versions of either Spark applications or Standalone clusters.
+
 ■ Standalone cluster consists of master and worker processes.  
 ■ A master process acts as the cluster manager: it accepts application request to be run and schedules worker resources (available CPU cores) among them. Worker processes launch executors (and the driver for applications in cluster-deploy mode) for task execution.  
 ■ Driver orchestrates and monitors execution of Spark jobs, and executors execute a job’s task.
@@ -43,7 +47,12 @@ YARN is Hadoop’s resource manager and execution system. Running Spark on YARN 
 
 ■ YARN lets you run different types of Java applications, not just Spark, so you can mix legacy Hadoop and Spark applications with ease.  
 ■ YARN provides methods for isolating and prioritizing applications among users and organizations, functionality the standalone cluster doesn’t have.  
-■ You don’t have to install Spark on all nodes in the cluster.
+■ You don’t have to install Spark on all nodes in the cluster.  
+■ It can run and dynamically distribute resources between different applications - some running Hive, some using HBase or Impala, and others running Spark.
+
+Limitations:
+1) YARN is not a standalone component. It is cluster manager for Hadoop, and as such it has always been closely tied to the Hadoop ecosystem.
+2) Spark jobs running on YARN run slower than on Standalone cluster.
 
 ■ YARN main components are a resource manager (similar to Spark master) for the cluster and node managers (similar to Spark workers) for each node in the cluster.  
 ■ Applications on YARN run in containers (JVM processes to which CPU and memory resources are granted).  
