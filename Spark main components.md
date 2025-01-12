@@ -1,5 +1,5 @@
 
-Cluster Manager
+# Cluster Manager
 
 ■ Purpose is to allocate physical resources (CPU and memory) that can execute logical code.
 
@@ -13,7 +13,7 @@ Cluster Manager
 ■ Cluster manager ensures that resources in a distributed environment are available when many concurrent users share this environment. When many users share the same environment, they can make conflicting requests (such as requesting 70% of the available 
 memory of the system at the same time). Cluster manager can deal with this conflict by explicitly scheduling when the users get specific resources, or by negotiating with the requesting user or application.
 
-Driver
+# Driver
 
 ■ Driver is essentially an overseer that maintains connections to the other entities in the cluster and submits tasks for execution on the worker nodes in the cluster.
 ■ Translates the logical Spark application code into physical commands that are executed in the cluster.
@@ -24,7 +24,7 @@ Driver
 ■ Then, the Task Scheduler handles the scheduling of these tasks in the cluster taking into account resource and locality constraints and assigns tasks to executors accordingly.
 
 
-Workers and Executors
+# Workers and Executors
 
 ■ worker nodes are the physical machines that run executors, which have one or more tasks, executing the code that makes up a Spark job.
 ■ Each worker has a fixed set of resources available to it (CPU and memory), and these resources are explicitly allocated to the cluster manager.
