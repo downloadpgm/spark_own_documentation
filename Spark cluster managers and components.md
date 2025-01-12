@@ -57,3 +57,10 @@ Step 3. A node manager launches a container for the application master (Spark dr
 Step 4. The application master asks the resource manager for more containers to be used as Spark executors.  
 Step 5. If granted, application master asks the node managers to launch executors in the new containers.  
 Step 6. The driver and executors communicate independent of the cluster’s processes.
+
+■ YARN’s ResourceManager has a pluggable interface that allows different plug-ins to implement its resource-scheduling functions. The ones available are : FIFO scheduler, capacity scheduler, and fair scheduler.  
+1. FIFO scheduler: it lets applications take all the resources they need. If two applications require the same resources, the first
+application that requests will be first served.
+2. Capacity scheduler: it was designed for sharing of a single YARN cluster by different organizations, and it guarantees that each organization will always have a certain amount of resources available (guaranteed capacity) defined by a queue. Each queue’s capacity determines the percentage of cluster resources that can be used by applications submitted to it. A hierarchy of queues can be set up, so that sub-queues (sub-organizations) can share the resources of a single queue.
+3. Fair scheduler: it tries to assign resources so that all applications get (on average) an equal share. Like the capacity scheduler, it also organizes applications into queues. The fair scheduler also supports application priorities (some applications should get more resources than others) and minimum capacity requirements. It also enables preemption, meaning when an application
+demands resources, the fair scheduler can take some resources from other running applications.
