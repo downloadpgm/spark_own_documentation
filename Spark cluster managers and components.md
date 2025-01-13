@@ -12,7 +12,10 @@ The main clusters that Spark runs on are Hadoop YARN, Apache Mesos, and Spark st
 
 Limitations:
 1) It is not possible to run mixed different types of Java applications, only Spark.
-2) It is not possible to run intermixed different versions of either Spark applications or Standalone clusters.
+2) It can not run intermixed different versions of either Spark applications or Standalone clusters.
+3) To allow concurrent run of Spark applications in the cluster, it requires each application to explicitly and statically specify the number of resources it will consume.
+4) This static allocation is persistent and cannot be adjusted later. The impact is that can’t dynamically scale up or scale down the resources available to the cluster.
+
 
 ■ Standalone cluster consists of master and worker processes.  
 ■ A master process acts as the cluster manager: it accepts application request to be run and schedules worker resources (available CPU cores) among them. Worker processes launch executors (and the driver for applications in cluster-deploy mode) for task execution.  
@@ -52,7 +55,9 @@ YARN is Hadoop’s resource manager and execution system. Running Spark on YARN 
 
 Limitations:
 1) YARN is not a standalone component. It is cluster manager for Hadoop, and as such it has always been closely tied to the Hadoop ecosystem.
-2) Spark jobs running on YARN run slower than on Standalone cluster.
+2) There are more pieces involved in standing up and maintaining a YARN cluster, introducing more points of failure and potential challenges
+3) Spark jobs running on YARN start slower than on Standalone cluster.
+
 
 ■ YARN main components are a resource manager (similar to Spark master) for the cluster and node managers (similar to Spark workers) for each node in the cluster.  
 ■ Applications on YARN run in containers (JVM processes to which CPU and memory resources are granted).  
