@@ -22,7 +22,7 @@ executed. This will pose an overhead on driver for scheduling tasks.
 
 ■ This operation happens in reduce phase of map/reduce transformations, and is not a trivial one as large chunks of data have to be sent from one node to another one.
 
-■ A “trick” to increase the performance is pre-partitioning RDDs before wide transformations including join, reduceByKey, groupByKey, cogroup, and so on.
+■ A “trick” to increase the performance is pre-partitioning RDDs before wide transformations including join, reduceByKey, groupByKey, cogroup, and so on.  
 ■ Another way to avoid large amounts of data being scattered across the worker nodes is to choose the right operators at the right 
 time:
 1) groupByKey versus reduceByKey
