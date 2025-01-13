@@ -31,7 +31,7 @@ Step 4. The master instructs both workers to launch executors for the applicatio
 Step 5. The workers spawn executor JVMs.  
 Step 6. The driver and executors communicate independent of the cluster’s processes.
 
-■ A master process is the most important component in the standalone cluster. If the master process dies, the cluster becomes unusable: clients can’t submit new applications to the cluster, and users can’t see the state of the currently running ones.
+■ A master process is the most important component in the standalone cluster. If the master process dies, the cluster becomes unusable: clients can’t submit new applications to the cluster, and users can’t see the state of the currently running ones.  
 ■ Worker processes, on the other hand, aren’t critical for cluster availability. If one of the workers becomes unavailable, Spark will restart its tasks on another worker.
 
 ■ Spark standalone provides two ways to recover application and worker data that was running before the master died: 
