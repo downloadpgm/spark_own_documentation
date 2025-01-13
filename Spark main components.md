@@ -40,3 +40,19 @@ memory of the system at the same time). Cluster manager can deal with this confl
 ■ Since the data being processed in a cluster is split up across multiple nodes, depending on the data size and how it is distributed, you may achieve better performance by increasing the number of executors.
 
 ■ A single executor may have multiple tasks sharing a memory pool. This memory pool can be used to cache data, shuffle operations and shared variables along the cluster.
+
+
+# Spark Execution Model
+
+■ When you run a Spark application, a driver process is launched alongside a series of executor processes distributed on the worker nodes across the cluster.
+
+■ The driver program has the responsibility to run the user application and manage all of the work that needs to be executed when an action is triggered.
+
+■ The executor processes are the ones that perform the actual work in the form of tasks and save the results.
+
+■ For each action triggered inside of a Spark application, the DAG scheduler creates an execution plan to accomplish it. The execution plan consists of assembling as many transformations with "narrow dependencies" as possible into stages.
+
+■ When a stage finds its limit and has wide dependencies, it requires shuffle operations. A wide dependency between RDDs happens when 
+a partition of the parent’s RDD is used by multiple child RDD partitions.
+
+■ The task scheduler will assign tasks to executors based on the available resources and on data locality.
