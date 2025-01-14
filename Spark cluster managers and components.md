@@ -4,7 +4,7 @@ A Spark cluster is a set of interconnected JVM processes, usually running in a d
 The main clusters that Spark runs on are Hadoop YARN, Apache Mesos, and Spark standalone.
 
 
-# Spark Standalone
+## Spark Standalone
 
 Source: Spark in Action, cap 11
 
@@ -47,7 +47,7 @@ You turn on ZooKeeper recovery by setting the spark.deploy.recoveryMode paramete
 ■ Submitting an application in cluster-deploy mode, --supervise option tells Spark to restart the driver process if it fails (or ends abnormally). This restarts the entire application because it isn’t possible to recover the state of a Spark program and continue at the point where it failed.
 
 
-# Hadoop YARN
+## Hadoop YARN
 
 Source: Spark in Action, cap 12
 
