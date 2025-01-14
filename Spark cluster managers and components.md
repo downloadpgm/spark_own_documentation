@@ -15,7 +15,7 @@ Source: Spark in Action, cap 11
 
 Limitations:
 1) It is not possible to run mixed different types of Java applications, only Spark.
-2) It can not run intermixed different versions of either Spark applications or Standalone clusters.
+2) It is not possible to run versios of Spark applications that conflicts with Standalone cluster.
 3) To allow concurrent run of Spark applications in the cluster, it requires each application to explicitly and statically specify the number of resources it will consume.
 4) This static allocation is persistent and cannot be adjusted later. The impact is that can’t dynamically scale up or scale down the resources available to the cluster.
 
