@@ -1,10 +1,12 @@
-source: Spark in Action, cap 11
 
 A Spark cluster is a set of interconnected JVM processes, usually running in a distributed manner on different machines.
 
 The main clusters that Spark runs on are Hadoop YARN, Apache Mesos, and Spark standalone.
 
+
 # Spark Standalone
+
+Source: Spark in Action, cap 11
 
 ■ Standalone cluster is built specifically for Spark applications and only run Spark applications.  
 ■ A Spark standalone cluster provides faster job startup than those jobs running on YARN.  
@@ -47,7 +49,7 @@ You turn on ZooKeeper recovery by setting the spark.deploy.recoveryMode paramete
 
 # Hadoop YARN
 
-source: Spark in Action, cap 12
+Source: Spark in Action, cap 12
 
 YARN is Hadoop’s resource manager and execution system. Running Spark on YARN has several advantages:
 

@@ -1,4 +1,4 @@
-source: Spark_ Big Data Cluster Computing in Production, Cap 2
+Source: Spark_ Big Data Cluster Computing in Production, Cap 2
 
 # Cluster Manager
 
