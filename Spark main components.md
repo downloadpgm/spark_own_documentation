@@ -2,10 +2,10 @@ Source: Spark_ Big Data Cluster Computing in Production, Cap 2
 
 ## Cluster Manager
 
-■ Purpose is to allocate physical resources (CPU and memory) that can execute logical code.
+■ Its purpose is to allocate physical resources (CPU and memory) that can execute logical code.
 
 ■ It has to deal with following requirements: 
-1) scalability (adding hardware resources, especially in a network, we introduce complexity to the system)
+1) scalability (adding hardware resources, specially in a network, we introduce complexity to the system)
 2) durability (being resilient to failures both on any single machine, and on failures between machines, or with degraded performance)
 3) availability (system remains operational even failures of individual components without interruption of service, with dynamic addition and loss of resources)
 
@@ -22,7 +22,7 @@ memory of the system at the same time). Cluster manager can deal with this confl
 
 ■ Maintains the Spark context — a program state that tracks application settings and available resources, and maintains certain internal constructs, such as accumulators and broadcast variables.
 
-■ Handles communication with the cluster manager to request resources to execute the Spark application.
+■ Handles communication with the cluster manager to request resources (CPU and memory) to execute the Spark application.
 
 ■ Creates an execution plan based on the code of Spark application and submits to worker nodes. The execution plan is a DAG of actions and transformations. Spark optimizes this DAG to minimize data movement.
 
@@ -53,7 +53,6 @@ memory of the system at the same time). Cluster manager can deal with this confl
 
 ■ For each action triggered inside of a Spark application, the DAG scheduler creates an execution plan to accomplish it. The execution plan consists of assembling as many transformations with "narrow dependencies" as possible into stages.
 
-■ When a stage finds its limit and has wide dependencies, it requires shuffle operations. A wide dependency between RDDs happens when 
-a partition of the parent’s RDD is used by multiple child RDD partitions.
+■ When a stage finds its limit and has "wide dependencies", it requires shuffle operations. A wide dependency between RDDs happens when a partition of the parent’s RDD is used by multiple child RDD partitions.
 
 ■ The task scheduler will assign tasks to executors based on the available resources and on data locality.
