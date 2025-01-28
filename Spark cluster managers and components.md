@@ -15,7 +15,7 @@ Source: Spark in Action, cap 11
 
 Limitations:
 1) It is not possible to run different types of Java applications, only Spark.
-2) It is not possible to run versions of Spark applications that conflicts with Standalone cluster.
+2) It is a challenge to run a variety of different applications running different Spark versions that conflicts with Standalone cluster.
 3) To allow concurrent run of Spark applications in the cluster, it requires each application to explicitly and statically specify the number of resources (CPU and memory) it will consume.
 4) This static allocation is persistent and cannot be adjusted later. The impact is that can’t dynamically scale up or scale down the resources available to the cluster.
 
@@ -83,3 +83,7 @@ application that requests will be first served.
 2. Capacity scheduler: it was designed for sharing of a single YARN cluster by different organizations, and it guarantees that each organization will always have a certain amount of resources available (guaranteed capacity) defined by a queue. Each queue’s capacity determines the percentage of cluster resources that can be used by applications submitted to it. A hierarchy of queues can be set up, so that sub-queues (sub-organizations) can share the resources of a single queue.
 3. Fair scheduler: it tries to assign resources so that all applications get (on average) an equal share. Like the capacity scheduler, it also organizes applications into queues. The fair scheduler also supports application priorities (some applications should get more resources than others) and minimum capacity requirements. It also enables preemption, meaning when an application
 demands resources, the fair scheduler can take some resources from other running applications.
+
+
+
+NOTICE: more on limitations, check Spark Definitive Guide, Cap 17, pag 293 
