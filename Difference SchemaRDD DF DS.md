@@ -40,3 +40,16 @@ When you use the Dataset API, for every row it touches, Spark converts the inter
 // Beginning Apache Spark, Cap 4, pag 134
 
 When you use the strongly typed Dataset APIs, Spark implicitly converts each Row instance to the domain-specific object that you provide. This conversion has some cost in terms of performance; however, it provides more flexibility.
+
+
+Mechanism Implemented : (Spark, The Definite Guide, Cap 11, pag 204)
+
+For example, given a class Person with two fields, name (string) and age (int), an encoder directs
+Spark to generate code at runtime to serialize the Person object into a binary structure. When using
+DataFrames or the “standard” Structured APIs, this binary structure will be a Row. When we want to
+create our own domain-specific objects, we specify a case class in Scala or a JavaBean in Java.
+
+Spark will allow us to manipulate this object (in place of a Row) in a distributed manner.
+When you use the Dataset API, for every row it touches, this domain specifies type, Spark converts
+the Spark Row format to the object you specified (a case class or Java class). This conversion slows
+down your operations but can provide more flexibility.
