@@ -33,6 +33,14 @@ Dataset - wraps a RDD containing objects of specific class
 
 ----------
 
+
+Row is a generic untyped JVM object that may hold different types of fields.
+
+Row is a generic object type in Spark, holding a collection of mixed types that can be  accessed using an index. Internally, Spark manipulates Row objects, converting them to the equivalent types. For example, an Int as one  of your fields in a Row will be mapped or converted to IntegerType or IntegerType() respectively for Scala or Java and Python
+
+
+----------
+
 // Spark, The Definite Guide, Cap 11, pag 204
 
 When you use the Dataset API, for every row it touches, Spark converts the internal Row format to the object you specified (a case class or Java class). This conversion slows down your operations but can provide more flexibility.
